@@ -3,6 +3,10 @@ package dev.kata.stringcalculator
 class StringCalculator {
     fun add(number: String): Int
     {
-        return 0
+        if (number != "") {
+            return number.toInt()
+        } else{
+            return 0
+        }
     }
 }
