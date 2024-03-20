@@ -5,7 +5,7 @@ class StringCalculator {
     {
         if (number != "") {
             var sum = 0
-            val numbers = number.split(",")
+            val numbers = number.split(",","/","\n")
 //            for (i in numbers){
 //                println(i)
 //            }
