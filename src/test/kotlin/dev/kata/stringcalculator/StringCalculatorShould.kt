@@ -6,9 +6,9 @@ import org.mockito.kotlin.doThrow
 import org.mockito.kotlin.mock
 
 internal class StringCalculatorShould {
-//    When given an empty string return 0
-//    Given a number return the number
-//
+//    Should return 0 when given an empty string
+//    Should return a number when given a number
+//    Should return the sum when given two numbers
 
     @Test
     fun `Return 0 when given an empty string`() {
@@ -23,5 +23,12 @@ internal class StringCalculatorShould {
         val stringCalculator = StringCalculator()
         val result = stringCalculator.add("3")
         assertThat(result).isEqualTo(3)
+    }
+
+    @Test
+    fun `Return the sum when given two numbers`(){
+        val stringCalculator = StringCalculator()
+        val result = stringCalculator.add("3,1")
+        assertThat(result).isEqualTo(4)
     }
 }
