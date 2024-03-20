@@ -13,7 +13,6 @@ internal class StringCalculatorShould {
     @Test
     fun `Return 0 when given an empty string`() {
         val stringCalculator = StringCalculator()
-
         val result = stringCalculator.add("")
 
         assertThat(result).isEqualTo(0)
