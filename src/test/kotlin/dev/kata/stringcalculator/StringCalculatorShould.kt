@@ -17,4 +17,11 @@ internal class StringCalculatorShould {
 
         assertThat(result).isEqualTo(0)
     }
+
+    @Test
+    fun `Return the number when given only a number`(){
+        val stringCalculator = StringCalculator()
+        val result = stringCalculator.add("3")
+        assertThat(result).isEqualTo(3)
+    }
 }
