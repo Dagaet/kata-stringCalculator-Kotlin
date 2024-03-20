@@ -9,6 +9,8 @@ internal class StringCalculatorShould {
 //    Should return 0 when given an empty string
 //    Should return a number when given a number
 //    Should return the sum when given two numbers
+//    Should return the sum of numbers when there are different delimiters
+
 
     @Test
     fun `Return 0 when given an empty string`() {
@@ -30,5 +32,12 @@ internal class StringCalculatorShould {
         val stringCalculator = StringCalculator()
         val result = stringCalculator.add("3,1")
         assertThat(result).isEqualTo(4)
+    }
+
+    @Test
+    fun `Return the sum when there are different limiters`(){
+        val stringCalculator = StringCalculator()
+        val result = stringCalculator.add("3,1/2\n1")
+        assertThat(result).isEqualTo(7)
     }
 }

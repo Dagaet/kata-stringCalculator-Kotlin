@@ -6,8 +6,12 @@ class StringCalculator {
         if (number != "") {
             var sum = 0
             val numbers = number.split(",")
+//            for (i in numbers){
+//                println(i)
+//            }
             for (value in numbers) {
                 sum += value.toInt()
+                println(sum)
             }
             return sum
         } else{
