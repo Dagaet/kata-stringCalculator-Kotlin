@@ -1,7 +1,9 @@
 package dev.kata.stringcalculator
 
 import org.assertj.core.api.Assertions.*
+import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
+import kotlin.test.assertFailsWith
 
 internal class StringCalculatorShould {
 //  Should return 0 when given an empty string
@@ -47,5 +49,12 @@ internal class StringCalculatorShould {
         val result = stringCalculator.add("//;\n1;2;3;4;5;6;7;8;9")
 
         assertThat(result).isEqualTo(45)
+    }
+
+    @Test
+    fun `Throw an error when negative numbers are in the string`() {
+        val stringCalculator = StringCalculator()
+        val result = assertFailsWith<Exception> { stringCalculator.add("1,-2,-3") }
+        Assertions.assertEquals("error: negatives not allowed: -2 -3", result.message)
     }
 }
