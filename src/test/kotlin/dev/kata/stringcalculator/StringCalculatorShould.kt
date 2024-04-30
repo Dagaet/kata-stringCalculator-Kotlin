@@ -29,4 +29,12 @@ internal class StringCalculatorShould {
 
         assertThat(result).isEqualTo(6)
     }
+
+    @Test
+    fun `Return the sum of any quantity of given numbers`() {
+        val stringCalculator = StringCalculator()
+        val result = stringCalculator.add("1,2,3,4,5,6,7,8,9")
+
+        assertThat(result).isEqualTo(45)
+    }
 }
