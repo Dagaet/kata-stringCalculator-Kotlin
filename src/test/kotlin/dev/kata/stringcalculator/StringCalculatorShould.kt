@@ -14,5 +14,11 @@ internal class StringCalculatorShould {
         assertThat(result).isEqualTo(0)
     }
 
+    @Test
+    fun `Return the same number when given`() {
+        val stringCalculator = StringCalculator()
+        val result = stringCalculator.add("2")
 
+        assertThat(result).isEqualTo(2)
+    }
 }
