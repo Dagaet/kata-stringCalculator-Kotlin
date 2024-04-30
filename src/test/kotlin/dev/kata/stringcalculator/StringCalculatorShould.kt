@@ -21,4 +21,12 @@ internal class StringCalculatorShould {
 
         assertThat(result).isEqualTo(2)
     }
+
+    @Test
+    fun `Return the sum of two given numbers`() {
+        val stringCalculator = StringCalculator()
+        val result = stringCalculator.add("2,4")
+
+        assertThat(result).isEqualTo(6)
+    }
 }
