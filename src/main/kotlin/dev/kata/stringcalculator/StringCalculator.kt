@@ -5,6 +5,7 @@ class StringCalculator {
     {
         if (number.isNotEmpty()) {
             var delimiter = ","
+            var errorMessage = "error: negatives not allowed: "
             var sum = 0
             var numbers: List<String> = listOf()
             if (number.startsWith("//")){
@@ -14,7 +15,16 @@ class StringCalculator {
                 numbers = number.split(delimiter)
             }
 
-            numbers.forEach { iterator -> sum += iterator.toInt() }
+            numbers.forEach { iterator ->
+                if (iterator.toInt() > 0 ){
+                    sum += iterator.toInt()
+                } else {
+                    errorMessage += "$iterator "
+                }
+            }
+            if (errorMessage.length > 30){
+                throw Exception(errorMessage.substring(0, errorMessage.length-1))
+            }
             return sum
         }
 
