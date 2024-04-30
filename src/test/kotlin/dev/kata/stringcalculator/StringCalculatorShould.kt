@@ -4,7 +4,10 @@ import org.assertj.core.api.Assertions.*
 import org.junit.jupiter.api.Test
 
 internal class StringCalculatorShould {
-//    Should return 0 when given an empty string
+//  Should return 0 when given an empty string
+//  Should return the sum of two numbers when given
+//  Should return the sum of any quantity of numbers
+//  Should return the sum of any quantity of given numbers specifying its separator
 
     @Test
     fun `Return 0 when given an empty string`() {
@@ -34,6 +37,14 @@ internal class StringCalculatorShould {
     fun `Return the sum of any quantity of given numbers`() {
         val stringCalculator = StringCalculator()
         val result = stringCalculator.add("1,2,3,4,5,6,7,8,9")
+
+        assertThat(result).isEqualTo(45)
+    }
+
+    @Test
+    fun `Return the sum of any quantity of given numbers specifying its separator`() {
+        val stringCalculator = StringCalculator()
+        val result = stringCalculator.add("//;\n1;2;3;4;5;6;7;8;9")
 
         assertThat(result).isEqualTo(45)
     }
